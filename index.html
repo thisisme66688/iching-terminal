@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>易經六十四卦占卜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="tao-symbol">☯</span> 易經六十四卦 <span class="tao-symbol">☯</span></h1>
+            <p>請在心中默念您的問題，並連續進行六次運算</p>
+        </header>
+
+        <!-- 擲硬幣與卦象顯示區 -->
+        <main id="divination-area">
+            <div id="coin-animation" class="coin-area">
+    <!-- 第一枚銅錢 -->
+    <div class="coin">
+        <div class="coin-inner" id="c1-inner">
+            <div class="coin-front">
+                <svg class="chinese-coin" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="23" fill="#B87333" stroke="#4A2511" stroke-width="2"/>
+                    <rect x="17" y="17" width="16" height="16" fill="#1e1e1e" stroke="#4A2511" stroke-width="2"/>
+                    <text x="25" y="10" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">康</text>
+                    <text x="25" y="41" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">熙</text>
+                    <text x="40" y="25.5" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">通</text>
+                    <text x="10" y="25.5" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">寶</text>
+                </svg>
+            </div>
+            <div class="coin-back">
+                <svg class="chinese-coin" viewBox="0 0 50 50">
+                    <!-- 銅錢底色與方孔 -->
+                    <circle cx="25" cy="25" r="23" fill="#B87333" stroke="#4A2511" stroke-width="2"/>
+                    <rect x="17" y="17" width="16" height="16" fill="#1e1e1e" stroke="#4A2511" stroke-width="2"/>
+                    
+                    <!-- 左側滿文 (寶 Boo) - 帶有書法頓筆感 -->
+                    <path d="M 12 16 C 15 15, 14 19, 12 21 C 15 22, 14 26, 12 27 C 14 28, 14 33, 11 34" fill="none" stroke="#4A2511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="11" cy="14" r="1.5" fill="#4A2511"/>
+                    
+                    <!-- 右側滿文 (泉 Ciowan) - 帶有直線與勾尾 -->
+                    <path d="M 38 17 C 36 16, 35 19, 38 21 C 36 23, 39 25, 37 27 L 37 32 C 37 35, 40 35, 41 33" fill="none" stroke="#4A2511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="39" cy="14" r="1.5" fill="#4A2511"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- 第二枚銅錢 -->
+    <div class="coin">
+        <div class="coin-inner" id="c2-inner">
+            <div class="coin-front">
+                <svg class="chinese-coin" viewBox="0 0 50 50"><circle cx="25" cy="25" r="23" fill="#B87333" stroke="#4A2511" stroke-width="2"/><rect x="17" y="17" width="16" height="16" fill="#1e1e1e" stroke="#4A2511" stroke-width="2"/><text x="25" y="10" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">康</text><text x="25" y="41" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">熙</text><text x="40" y="25.5" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">通</text><text x="10" y="25.5" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">寶</text></svg>
+            </div>
+            <div class="coin-back">
+                <svg class="chinese-coin" viewBox="0 0 50 50">
+                    <!-- 銅錢底色與方孔 -->
+                    <circle cx="25" cy="25" r="23" fill="#B87333" stroke="#4A2511" stroke-width="2"/>
+                    <rect x="17" y="17" width="16" height="16" fill="#1e1e1e" stroke="#4A2511" stroke-width="2"/>
+                    
+                    <!-- 左側滿文 (寶 Boo) - 帶有書法頓筆感 -->
+                    <path d="M 12 16 C 15 15, 14 19, 12 21 C 15 22, 14 26, 12 27 C 14 28, 14 33, 11 34" fill="none" stroke="#4A2511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="11" cy="14" r="1.5" fill="#4A2511"/>
+                    
+                    <!-- 右側滿文 (泉 Ciowan) - 帶有直線與勾尾 -->
+                    <path d="M 38 17 C 36 16, 35 19, 38 21 C 36 23, 39 25, 37 27 L 37 32 C 37 35, 40 35, 41 33" fill="none" stroke="#4A2511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="39" cy="14" r="1.5" fill="#4A2511"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- 第三枚銅錢 -->
+    <div class="coin">
+        <div class="coin-inner" id="c3-inner">
+            <div class="coin-front">
+                <svg class="chinese-coin" viewBox="0 0 50 50"><circle cx="25" cy="25" r="23" fill="#B87333" stroke="#4A2511" stroke-width="2"/><rect x="17" y="17" width="16" height="16" fill="#1e1e1e" stroke="#4A2511" stroke-width="2"/><text x="25" y="10" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">康</text><text x="25" y="41" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">熙</text><text x="40" y="25.5" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">通</text><text x="10" y="25.5" font-size="10" font-family="'標楷體', serif" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#4A2511">寶</text></svg>
+            </div>
+            <div class="coin-back">
+                <svg class="chinese-coin" viewBox="0 0 50 50">
+                    <!-- 銅錢底色與方孔 -->
+                    <circle cx="25" cy="25" r="23" fill="#B87333" stroke="#4A2511" stroke-width="2"/>
+                    <rect x="17" y="17" width="16" height="16" fill="#1e1e1e" stroke="#4A2511" stroke-width="2"/>
+                    
+                    <!-- 左側滿文 (寶 Boo) - 帶有書法頓筆感 -->
+                    <path d="M 12 16 C 15 15, 14 19, 12 21 C 15 22, 14 26, 12 27 C 14 28, 14 33, 11 34" fill="none" stroke="#4A2511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="11" cy="14" r="1.5" fill="#4A2511"/>
+                    
+                    <!-- 右側滿文 (泉 Ciowan) - 帶有直線與勾尾 -->
+                    <path d="M 38 17 C 36 16, 35 19, 38 21 C 36 23, 39 25, 37 27 L 37 32 C 37 35, 40 35, 41 33" fill="none" stroke="#4A2511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="39" cy="14" r="1.5" fill="#4A2511"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+            
+            <div id="lines-container" class="lines-box">
+                <div class="placeholder-text">等待起卦...</div>
+            </div>
+
+            <button id="toss-btn">進行第 1 擲</button>
+        </main>
+
+        <!-- 結果數據面板 (預設隱藏) -->
+        <section id="result-panel" class="hidden">
+            <h2 id="hexagram-name">【 第 X 卦：卦名 】</h2>
+            <div class="stats-box">
+                <div class="stat-row">
+                    <span>🟩 成功率</span>
+                    <div class="progress-bar"><div id="bar-success" class="fill success"></div></div>
+                    <span id="text-success" class="percent">0%</span>
+                </div>
+                <div class="stat-row">
+                    <span>🟨 幸運度</span>
+                    <div class="progress-bar"><div id="bar-luck" class="fill luck"></div></div>
+                    <span id="text-luck" class="percent">0%</span>
+                </div>
+                <div class="stat-row">
+                    <span>🟥 風險值</span>
+                    <div class="progress-bar"><div id="bar-risk" class="fill risk"></div></div>
+                    <span id="text-risk" class="percent">0%</span>
+                </div>
+                <div class="stat-row">
+                    <span>⚡ 主動度</span>
+                    <div class="progress-bar"><div id="bar-active" class="fill active"></div></div>
+                    <span id="text-active" class="percent">0%</span>
+                </div>
+            </div>
+
+            <div class="conclusion-box">
+                <h3>💡 建議行動：</h3>
+                <p id="conclusion-text">載入中...</p>
+            </div>
+
+            <div id="warning-box" class="warning-box hidden">
+                <h3>⚠️ 變動事件警告：</h3>
+                <ul id="warning-list"></ul>
+            </div>
+            
+            <button id="reset-btn" onclick="location.reload()">重新占卜</button>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

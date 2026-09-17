@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Arial, "微軟正黑體", sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+/* 道教/易經符號專屬樣式 */
+.tao-symbol {
+    color: #d4af37; /* 與四角邊框同款的土豪金色 */
+    font-size: 2rem; /* 稍微放大一點點 */
+    font-weight: normal;
+    vertical-align: middle; /* 讓符號跟文字完美對齊 */
+    margin: 0 5px; /* 符號跟文字之間留點呼吸空間 */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4); /* 加上微弱的金色發光效果 */
+}
+
+/* --- 升級版主容器 (加入漸層與暗影) --- */
+.container {
+    position: relative; /* 為了定位金色邊角 */
+    width: 100%;
+    max-width: 420px;
+    background: linear-gradient(145deg, #222, #111);
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    border: 1px solid #333;
+}
+
+/* --- 神秘的金色四角邊框 (利用 CSS 畫出來) --- */
+.container::before, .container::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+}
+.container::before {
+    top: 15px; left: 15px;
+    border-top: 2px solid #d4af37;
+    border-left: 2px solid #d4af37;
+    opacity: 0.7;
+}
+.container::after {
+    bottom: 15px; right: 15px;
+    border-bottom: 2px solid #d4af37;
+    border-right: 2px solid #d4af37;
+    opacity: 0.7;
+}
+
+/* --- 升級版排卦區 (加入內陰影，更有深邃感) --- */
+.lines-box {
+    display: flex;
+    flex-direction: column-reverse; 
+    gap: 12px;
+    min-height: 180px;
+    background: #080808;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    border: 1px inset #222;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+/* --- 升級版立體按鈕 --- */
+button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    color: white;
+    border: 1px solid #66bb6a;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+button:hover {
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+    transform: translateY(-1px);
+}
+button:active { 
+    background: #2e7d32; 
+    transform: translateY(2px) scale(0.98); 
+    box-shadow: 0 2px 5px rgba(76, 175, 80, 0.4);
+}
+button:disabled { 
+    background: #444; 
+    border-color: #555;
+    box-shadow: none;
+    cursor: not-allowed; 
+    transform: none;
+}
+
+.placeholder-text { color: #555; }
+
+/* 爻線設計 (修復隱形問題) */
+.yao-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 16px; /* 稍微加厚一點，更有份量感 */
+    width: 100%;
+}
+.yang-line { 
+    width: 100%; 
+    height: 100%; /* 關鍵修復：給陽爻高度 */
+    background: #e0e0e0; /* 調亮一點更具科技感 */
+    border-radius: 4px; 
+}
+.yin-line { 
+    width: 45%; 
+    height: 100%; /* 關鍵修復：給陰爻高度 */
+    background: #e0e0e0; 
+    border-radius: 4px; 
+}
+.changing { 
+    background: #ffaa00; 
+    box-shadow: 0 0 15px #ffaa00; 
+} /* 變數發光特效 */
+
+/* 按鈕 */
+button {
+    width: 100%;
+    padding: 15px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+button:active { background: #388e3c; transform: scale(0.98); }
+button:disabled { background: #555; cursor: not-allowed; }
+#reset-btn { background: #444; margin-top: 20px; }
+
+/* 數據面板 */
+.hidden { display: none !important; }
+.stats-box { text-align: left; margin: 20px 0; }
+.stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+.stat-row span:first-child { width: 90px; }
+.percent { width: 45px; text-align: right; }
+.progress-bar {
+    flex-grow: 1;
+    height: 12px;
+    background: #333;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+.fill { height: 100%; width: 0%; transition: width 1s ease-in-out; }
+.success { background: #4caf50; }
+.luck { background: #ffeb3b; }
+.risk { background: #f44336; }
+.active { background: #2196f3; }
+
+.conclusion-box, .warning-box {
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+.conclusion-box h3 { margin: 0 0 10px 0; color: #4caf50; font-size: 1rem; }
+.warning-box { border-left: 4px solid #ffaa00; }
+.warning-box h3 { margin: 0 0 10px 0; color: #ffaa00; font-size: 1rem; }
+/* 變動事件列表的層次設定 */
+.warning-box ul { 
+    margin: 0; 
+    padding-left: 20px; 
+    font-size: 0.9rem;
+    color: #cccccc; /* 後面的敘述文字設定為舒適的淺灰色 */
+}
+
+.warning-box li {
+    margin-bottom: 10px; /* 增加每個變數之間的行距，更好閱讀 */
+    line-height: 1.5;
+}
+
+.warning-box li strong {
+    color: #ffaa00; /* 「第 X 階段：」維持醒目的亮橘色 */
+    letter-spacing: 1px; /* 稍微增加字距，更有科技感 */
+}
+
+/* --- 銅錢 3D 空間佈局 --- */
+.coin-area {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin: 25px 0;
+}
+
+.coin {
+    width: 60px;
+    height: 60px;
+    perspective: 800px; /* 建立 3D 深度 */
+}
+
+/* 內層負責 3D 旋轉 (JS 會控制角度) */
+.coin-inner {
+    width: 100%; height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.3, 0.1, 0.3, 1);
+}
+
+/* 正反面重疊，並隱藏背對著螢幕的那一面 */
+.coin-front, .coin-back {
+    position: absolute;
+    width: 100%; height: 100%;
+    backface-visibility: hidden;
+}
+
+/* 背面預設翻轉 180 度 */
+.coin-back { transform: rotateX(180deg); }
+.chinese-coin { width: 100%; height: 100%; }
+
+/* 外層負責上下彈跳的物理動畫 */
+.coin.tossing { animation: jumpAnim 0.6s ease-in-out; }
+.coin:nth-child(1).tossing { animation-delay: 0s; }
+.coin:nth-child(2).tossing { animation-delay: 0.05s; }
+.coin:nth-child(3).tossing { animation-delay: 0.1s; }
+
+@keyframes jumpAnim {
+    0% { transform: translateY(0); filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
+    50% { transform: translateY(-35px); filter: drop-shadow(0 20px 10px rgba(0,0,0,0.6)); }
+    100% { transform: translateY(0); filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
+}
